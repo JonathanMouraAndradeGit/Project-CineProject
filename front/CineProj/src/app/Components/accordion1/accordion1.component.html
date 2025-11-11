@@ -1,0 +1,7 @@
+<div class="Item">
+    <input type="radio" [id]="id" [name]="name" />
+    <label [for]="id" class="Header" [ngStyle]="{'color': (mode) ? 'black' : 'white'}">{{obj.title}}<div class="roll">&gt;</div></label>
+    <p class="Description" [ngStyle]="{'color': (mode) ? 'black' : 'white'}">
+        {{obj.description}}
+    </p>
+</div>

@@ -1,0 +1,18 @@
+<div [class]="['StepComp','actionScroll']">
+    <ng-template #StepItemCon let-obj="obj">
+        <div class="StepItemCon">
+            <div class="ItemC">
+                <img [src]="obj.icon"/>
+            </div>
+            <div class="ContentTxt">
+                <p [ngStyle]="{'color': (mode) ? 'black' : 'white'}">{{obj.title}}</p>
+                <p [ngStyle]="{'color': (mode) ? 'gray' : 'lightgray'}">{{obj.description}}</p>
+            </div>
+        </div>
+    </ng-template>
+    <ng-container *ngFor="let arElmt of arrSteps;let i = index">
+        <ng-container *ngTemplateOutlet="StepItemCon;context:{'obj':arElmt}">
+
+        </ng-container>
+    </ng-container>
+</div>

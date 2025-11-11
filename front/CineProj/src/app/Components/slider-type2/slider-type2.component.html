@@ -1,0 +1,32 @@
+<div class="SliderStep3" [ngStyle]="{'background-color': (mode) ? 'white' : 'rgb(20,20,20)'}">
+    <ng-template #SliderItem let-arr="arr">
+        <div class="Item">
+            <img [src]="arr.img"/>
+            <p>{{arr.title}}</p>
+        </div>
+    </ng-template>
+    <ng-template #SliderSubItem let-qtd="qtd" let-i="i">
+        <div class="ItemSelect" [ngStyle]="{'--qtd':qtd,'background-color': (mode) ? 'rgb(20,20,20)' : 'white','border': (mode) ? '2px solid rgb(20,20,20)' : '2px solid white'}">
+            <span class="Time" [ngStyle]="{'background-color': (mode) ? 'white' : 'rgb(20,20,20)'}"></span>
+            <p>{{i}}</p>
+        </div>
+    </ng-template>
+    <div class="SliderCon">
+        <button [class]="['btn','l']" (click)="desloc('l')">&lt;</button>
+        <button [class]="['btn','r']" (click)="desloc('r')">&gt;</button>
+        <div class="Slider">
+            <ng-container *ngFor="let el of arr;let i = index">
+                <ng-container *ngTemplateOutlet="SliderItem;context:{'arr':el}">
+
+                </ng-container>
+            </ng-container>
+        </div>
+    </div>
+    <div class="SliderSelect">
+        <ng-container *ngFor="let cl of arr;let i = index">
+            <ng-container *ngTemplateOutlet="SliderSubItem;context:{'qtd':arr.length,'i':i}">
+
+            </ng-container>
+        </ng-container>
+    </div>
+</div>

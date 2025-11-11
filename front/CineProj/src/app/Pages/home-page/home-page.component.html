@@ -1,0 +1,48 @@
+<div class="HomeMainContainer" [ngStyle]="{'background-color': (mode) ? 'white' : 'rgb(20,20,20)'}">
+    <app-slider-c></app-slider-c>
+    <!--p>home-page works!</p-->
+    <app-content-info1>
+        <app-img-layout class="displayItem" [arr]="[
+            [{ img: '/static/img/city.jpg', visible: true }, { img: '/static/img/program.jpg' , visible: true }, {img: '/static/img/city.jpg' , visible: true }], 
+            [{ img: '/static/img/shark.jpg' , visible: true }, {img: '/static/img/city.jpg' , visible: true }], 
+            [{ img: '/static/img/program.jpg' , visible: true }, {img: '/static/img/program.jpg' , visible: true }], 
+            [{ img: '/static/img/shark.jpg' , visible: true }], [{img: '/static/img/city.jpg' , visible: true }] ,
+                ]"></app-img-layout>
+    </app-content-info1>
+    <app-content-info2-split>
+        <app-slider-type2 class="top1"></app-slider-type2>
+        <app-steps-comp1 class="bottom1"></app-steps-comp1>
+    </app-content-info2-split>
+    <div style="width: 100%;height: 60vh;display: flex;align-items: center;justify-content: center;">
+        <app-display-dynamic class="top1"></app-display-dynamic>
+    </div>
+    <div style="width: 100%;height: 70vh;display: flex;align-items: center;justify-content: center;">
+        <app-card2 class="bottom1"></app-card2>
+        <app-card2 class="bottom1"></app-card2>
+        <app-card2 class="bottom1"></app-card2>
+    </div>
+    <!--app-content-info2-split>
+    <app-display-dynamic class="top1"></app-display-dynamic>
+    <app-card2 class="bottom1"></app-card2>
+    <app-card2 class="bottom1"></app-card2>
+    <app-card2 class="bottom1"></app-card2>
+</app-content-info2-split-->
+    <!--app-slider-type2 class="top1"></app-slider-type2>
+    <app-display-dynamic class="bottom1"></app-display-dynamic-->
+    <app-side-tlc></app-side-tlc>
+    <div style="width: 100%;height: 70vh;display: flex;align-items: center;justify-content: center;">
+        <div style="width: 100%;height: 100%;display: flex;align-items: center;justify-content: center;">
+            <app-img-layout [arr]="[
+            [{ img: '/static/img/city.jpg', visible: true }, { img: '/static/img/program.jpg' , visible: true }, {img: '/static/img/city.jpg' , visible: false }], 
+            [{ img: '/static/img/shark.jpg' , visible: true }, {img: '/static/img/city.jpg' , visible: true }], 
+            [{ img: '/static/img/program.jpg' , visible: false }, {img: '/static/img/program.jpg' , visible: true }], 
+            [{ img: '/static/img/shark.jpg' , visible: true }], [{img: '/static/img/city.jpg' , visible: true }] ,
+                ]"></app-img-layout>
+        </div>
+        <div class="AccorCls">
+            <ng-content *ngFor="let arr of arrEl;let i =index">
+                <app-accordion1 [obji]="arr" [idEl]="i+'gp1'" nameG="gp1"></app-accordion1>
+            </ng-content>
+        </div>
+    </div>
+</div>

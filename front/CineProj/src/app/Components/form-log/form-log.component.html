@@ -1,0 +1,20 @@
+<div class="FormLogCon">
+    <form [formGroup]="fg">
+        <div class="sideProgress">
+            <app-progress-info-v1 [p]="totC" [q]="totalFields"></app-progress-info-v1>
+        </div>
+        <div class="formMainC">
+            <div class="inputC">
+                <app-input-type1 type="text" id="fl1" label="email" (messageEvent)="getTotalCorrect()"
+                    [fgField]="this.fg.get('email')" formControlName="email"></app-input-type1>
+            </div>
+            <div class="inputC">
+                <app-input-type1 type="password" id="fl2" label="password" (messageEvent)="getTotalCorrect()"
+                    [fgField]="this.fg.get('password')" formControlName="password"></app-input-type1>
+            </div>
+        </div>
+    </form>
+    <div class="btnCon">
+        <button class="btn"><p>Submit</p></button>
+    </div>
+</div>

@@ -1,0 +1,91 @@
+<div class="PgContainer">
+    <!--p>page1 works!</p-->
+    <div class="frmCls">
+        <div class="ProGressInfoCon">
+            <!--app-progres-info1 [p]="qtdC" [q]="getTotF()"></app-progres-info1-->
+            <app-progres-info1 [p]="qtdC" [q]="arrG.length"></app-progres-info1>
+        </div>
+        <form [formGroup]="fg">
+            <div class="formMainCSlider">
+                <div class="formMainC">
+                    <div class="sideProgress">
+                        <app-progress-info-v1 [p]="arrG[0]['qtd']" [q]="getTotF2('gfield1')"></app-progress-info-v1>
+                    </div>
+
+                    <div [formGroup]="getGroup1('gfield1')" class="FieldsC">
+                        <div class="inputC">
+                            <app-input-type1 type="text" id="f1" label="name" (messageEvent)="getTotC2('gfield1')"
+                                [fgField]="this.fg.get('gfield1.name')" formControlName="name"></app-input-type1>
+                        </div>
+                        <div class="inputC">
+                            <app-input-type1 type="text" id="f2" label="Email" (messageEvent)="getTotC2('gfield1')"
+                                [fgField]="this.fg.get('gfield1.email')" formControlName="email"></app-input-type1>
+                        </div>
+                    </div>
+                </div>
+                <div class="formMainC">
+                    <div class="sideProgress">
+                        <app-progress-info-v1 [p]="arrG[1]['qtd']" [q]="getTotF2('gfield2')"></app-progress-info-v1>
+                    </div>
+
+                    <div [formGroup]="getGroup1('gfield2')" class="FieldsC">
+                        <div class="inputC">
+                            <app-input-type1 type="text" id="f3" label="Nickname" (messageEvent)="getTotC2('gfield2')"
+                                [fgField]="this.fg.get('gfield2.nickName')" formControlName="nickName"></app-input-type1>
+                        </div>
+                        <div class="inputC">
+                            <app-input-type1 type="password" id="f4" label="Password" (messageEvent)="getTotC2('gfield2')"
+                                [fgField]="this.fg.get('gfield2.password')" formControlName="password"></app-input-type1>
+                        </div>
+                    </div>
+                </div>
+                <div class="formMainC">
+                    <div class="maindtFieldC">
+                        <div class="sideContent">
+                            <div class="ageCls">
+                                age: {{this.fg.get('gfield3.age')?.value}}
+                            </div>
+                            <div class="Msg"
+                                *ngIf="this.fg.get('gfield3.age')?.touched && this.fg.get('gfield3.age')?.invalid">
+                                <p>{{this.fg.get('gfield3.age')?.["errors"]?.["msgE"]}}</p>
+                            </div>
+                        </div>
+                        <app-calendar01 (ev)="setFieldValue($event,'gfield3.age')"></app-calendar01>
+                    </div>
+                    <!--p>fields3</p-->
+                </div>
+            </div>
+            <div class="btnCon">
+                <button (click)="moveSides('l')" class="btn">
+                    <p>back</p>
+                </button>
+                <button class="btn" *ngIf="currentSlide != (len-1)" (click)="moveSides('r')">
+                    <p>next</p>
+                </button>
+                <button class="btn" *ngIf="currentSlide == (len-1)" (click)="subs()">
+                    <p>submit</p>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<!--div class="FieldCon">
+                <div class="MainContent">
+                    <label>name</label>
+                    <input type="text" placeholder=" " formControlName="name" (blur)="getTotC()">
+                </div>
+                <div class="Msg" *ngIf="this.fg.get('name')?.touched && this.fg.get('name')?.invalid">
+                    <p>{{this.fg.get("name")?.["errors"]?.["msgE"]}}</p>
+                </div>
+            </div-->
+<!--div class="FieldCon">
+                <div class="MainContent">
+                    <label>email</label>
+                    <input type="text" placeholder=" " formControlName="email" (blur)="getTotC()">
+                </div>
+                <div class="Msg" *ngIf="this.fg.get('email')?.touched && this.fg.get('email')?.invalid">
+                    <p>{{this.fg.get("email")?.["errors"]?.["msgE"]}}</p>
+                </div>
+            </div-->

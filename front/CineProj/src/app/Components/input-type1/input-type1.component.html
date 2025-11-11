@@ -1,0 +1,10 @@
+<div class="FieldCon">
+    <div class="MainContent">
+        <label [for]="idField">{{labelName}}</label>
+        <input #inp [id]="idField" [type]="type" placeholder=" " [(ngModel)]="value"
+        (input)="onChange(inp.value)" (blur)="onBlurFuns()">
+    </div>
+    <div class="Msg" *ngIf="fgField?.touched && fgField?.invalid">
+        <p>{{fgField?.["errors"]?.["msgE"]}}</p>
+    </div>
+</div>

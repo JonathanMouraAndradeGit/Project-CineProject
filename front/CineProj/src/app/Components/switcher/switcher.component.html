@@ -1,0 +1,17 @@
+<!--div class="SwitcherContainer"-->
+    <label class="mainC" for="switch1">
+        <input id="switch1" type="checkbox" (click)="changeMode()"/>
+        <div class="frameCirc">
+            <div [ngClass]="['FrameItem','sunC']">
+                <span class="Sun"></span>
+                <span class="Sray1"></span>
+                <span class="Sray2"></span>
+                <span class="Sray3"></span>
+                <span class="Sray4"></span>
+            </div>
+            <div [ngClass]="['FrameItem','MoonC']">
+                <span class="Moon"></span>
+            </div>
+        </div>
+    </label>
+<!--/div-->

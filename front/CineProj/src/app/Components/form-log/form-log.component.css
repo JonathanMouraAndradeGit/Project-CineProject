@@ -1,0 +1,130 @@
+:host,
+.FormLogCon{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+/*------------------------------------------------------------------------------------------*/
+form {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    transition: 0.5s;
+    flex-shrink: 10;
+    /*border: 2px solid royalblue;*/
+}
+.formMainC {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    /*border: 2px solid orange;*/
+    overflow: hidden;
+    flex-direction: column;
+    flex-shrink: 10;
+    /*border: 2px solid purple;*/
+    padding: 5px;
+}
+.inputC {
+    width: 100%;
+    flex-shrink: 10;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.sideProgress {
+    width: fit-content;
+    padding: 5px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.FieldsC{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*border: 2px solid green;*/
+    padding: 5px;
+    flex-direction: column;
+}
+
+.maindtFieldC{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.sideContent{
+    height: 100%;
+    width: 30%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 5px;
+}
+
+
+/*---------------------------------------------------------*/
+.btnCon{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    min-height: 10vh;
+}
+.btn{
+    height: 90%;
+    width: 25%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2vw;
+    text-transform: uppercase;
+    font-family: Arial;
+    font-weight: bolder;
+    position: relative;
+    overflow: hidden;
+    transition: 0.5s;
+    border-radius: 5px;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+.btn > *{
+    z-index: 1;
+    transition: inherit;
+}
+.btn::before{
+    content: "";
+    height: 0%;
+    width: 100%;
+    bottom: 0px;
+    position: absolute;
+    left: 0;
+    background-color: red;
+    border-radius: 50% 50% 0 0;
+    z-index: 0;
+    transition: 0.5s;
+}
+.btn:hover > p{
+    color: white;
+}
+.btn:hover:before{
+    height: 200%;
+}

@@ -1,0 +1,23 @@
+<div class="DisplayDynamicContainer"> 
+    <ng-template #temp let-el="el" let-i="i">
+        <label [ngStyle]="{'--pos':(i+1),'--qtd':arr.length}" class="LabelContainer" [for]="i">
+            <div class="Content">
+                <p>{{el.title}}</p>
+                <div class="Description">
+                    orem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore.
+                </div>
+                <div [ngStyle]="{'--qtd':arr.length}" class="Index">
+                    <p>{{(i+1)}}</p>
+                </div>
+
+            </div>
+            <img [src]="el.img" alt="" />
+            <input [id]="i" type="radio" name="grp" />
+        </label>
+    </ng-template>
+    <ng-container *ngFor="let el of arr;let i = index">
+        <ng-container *ngTemplateOutlet="temp;context:{el:el,i:i}"></ng-container>
+        <!--p>{{i}}</p-->
+    </ng-container>
+</div>

@@ -1,0 +1,12 @@
+<div class="progCon" #mainC>
+    <ng-template #temp1 let-i="i">
+        <div class="ItemCon">
+            <div class="circ">
+                <!--p>{{i}}</p-->
+            </div>
+        </div>
+    </ng-template>
+    <ng-container *ngFor="let e of getArr;let i=index">
+        <ng-container *ngTemplateOutlet="temp1;context:{i:e}"></ng-container>
+    </ng-container>
+</div>

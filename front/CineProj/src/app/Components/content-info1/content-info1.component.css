@@ -1,0 +1,139 @@
+*{
+    transition: 0.5s;
+}
+:host,.ContentInforContainer{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 100%;
+}
+:host{
+    height: 100vh;
+}
+.ContentInforContainer{
+    height: 100%;
+    padding: 5px;
+    padding-inline: 15%;
+}
+.topContainer{
+    width: 100%;
+    min-height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*border: 2px solid red;*/
+    gap: 10px;
+}
+.BottomContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*border: 2px solid yellow;*/
+    gap: 5%;
+}
+.Item{
+    height: 100%;
+    min-width: calc(100% / 30%);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    overflow: hidden;
+    /*border: 2px solid red;*/
+}
+.Item > .Icon{
+    width: 30%;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    padding-right: 5px;
+}
+.Item > span{
+    height: 70%;
+    width: 1px;
+    background-color: black;
+    top: 50%;
+    transform: translateY(25%);
+    margin-inline: 2px;
+} 
+.Item > .Icon > img{
+    width: 70%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: center;
+}
+.Content{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 5px;
+}
+.Content > h4{
+    text-transform: uppercase;
+    font-family: Arial;
+    font-size: 3vw;
+}
+.Content > p{
+    text-align: justify;
+}
+
+.Content > span > img{
+    transform: translateY(20%);
+    height: 1em;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: center;
+}
+.BottomContainer > div{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.BottomContainer > .BtnConL{
+    flex-direction: column;
+    align-items: flex-start !important;
+    padding: 5px;
+}
+.BottomContainer > .BtnConL > h3{
+    text-transform: uppercase;
+    font-family: Arial;
+    font-size: 4vw;
+}
+.BottomContainer > .BtnConR > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.TopicContainer{
+    width: 100%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.sideIcon{
+    width: 20%;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sideIcon > img{
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: center;
+}
+.TopicContainer > .Content > h4{
+    font-size: 2vw !important;
+}

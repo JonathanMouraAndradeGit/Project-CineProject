@@ -1,0 +1,27 @@
+<div class="TLHCon">
+    <div class="ScrollableCon">
+        <ng-container *ngFor="let i of arr">
+            <div class="ItemTLCon">
+                <div class="ContentCon">
+                    <span class="circCon">
+
+                    </span>
+                    <p class="txtTitle" [ngStyle]="{'color': (mode) ? 'black' : 'white'}">Title</p>
+                    <div class="txtCon">
+                        <p [ngStyle]="{'color': (mode) ? 'black' : 'white'}">consectetur adipisicing elit.
+                            Quod cupiditate repellendus
+                            facere eos? Amet, omnis nam,
+                            voluptatum eum maxime natus
+                            laudantium suscipit, repellat quidem</p>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+    <span [class]="['ActionScroller','l']" (mouseover)="setIntervalRep('l')" (mouseout)="clearTimer()">
+        &lt;
+    </span>
+    <span [class]="['ActionScroller','r']" (mouseover)="setIntervalRep('r')" (mouseout)="clearTimer()">
+        &gt;
+    </span>
+</div>

@@ -1,0 +1,145 @@
+:host,.SliderStep3{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.SliderStep3{
+    /*border: 2px solid red;*/
+    flex-direction: column;
+}
+.SliderCon{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /*border: 2px solid green;*/
+    position: relative;
+}
+.SliderSelect{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*border: 2px solid orange;*/
+    padding: 5px;
+    padding-inline: 15%;
+    gap: 5px;
+
+}
+.SliderSelect > .ItemSelect{
+    position: relative;
+    width: calc( 70% / var(--qtd,0) );
+    height: calc((70% / var(--qtd,0)) * 4);
+    border-radius: 2vw;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    transition: 0.5s;
+    background-color: black;
+    border: 2px solid black;
+    overflow: hidden;
+}
+.ItemSelect > p{
+    display: none;
+}
+.SliderSelect > .ItemSelect.Selected{
+    width: 30% !important;
+}
+.SliderSelect > .ItemSelect > span{
+    width: 0px;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.SliderSelect > .ItemSelect.Selected > span{
+    animation-name: anim1;
+    animation-delay: 0.5s;
+    animation-duration: 1.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes anim1 {
+    from{
+        width: 0px;
+    }to{
+        width: 100%;
+    }
+}
+.btn{
+    position: absolute;
+    height: 20%;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border-radius: 50%;
+    background-color: black;
+    transition: 0.5s;
+    opacity: 0.5;
+    font-weight: bolder;
+    font-size: 2.5vw;
+    z-index: 5;
+}
+.btn:hover{
+    opacity: 1;
+}
+.btn.l{
+    left: 5px;
+}
+.btn.r{
+    right: 5px;
+}
+
+.Slider{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: absolute;
+    transition: 0.5s;
+    /*transform: translateX(0);*/
+}
+.Slider > .Item{
+    /*border: 2px solid orange;*/
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+}
+.Slider > .Item > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(0.7);
+}
+.Slider > .Item > p{
+    text-transform: uppercase;
+    position: absolute;
+    font-size: 5vw;
+    color: white;
+    white-space: nowrap;
+    left: 5px;
+    filter: blur(5px);
+    transform: translateY(50%);
+    transition-delay: 0.5s;
+    opacity: 0;
+    transition: 1s;
+}
+.Slider > .Item.Selected > p{
+    filter: blur(0px);
+    transform: translateY(-50%);
+    opacity: 1;
+}

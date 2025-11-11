@@ -1,0 +1,145 @@
+:host{
+    width: 100%;
+    height: 50vh;
+    /*border: 2px solid red;*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.TLHCon{
+    width: 100%;
+    height: 100%;
+    /*border: 2px solid red;*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.ScrollableCon{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /*border: 2px solid green;*/
+    position: absolute;
+    transition: 0.1s;
+}
+.ActionScroller{
+    height: 100%;
+    width: 5vw;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5vw;
+    color: white;
+    font-weight: bolder;
+    position: absolute;
+    opacity: 0.5;
+}
+.ActionScroller.l{
+    left: 0px;
+}
+.ActionScroller.r{
+    right: 0px;
+}
+.ItemTLCon{
+    height: 100%;
+    min-width: calc(100% / 5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*border: 2px solid red;*/
+}
+/*
+.ItemTLCon:global(.activeItem){
+    background-color: purple;
+}*/
+.ContentCon{
+    width: 100%;
+    height: 50%;
+    /*border: 2px solid green;*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.ScrollableCon > .ItemTLCon:not(:nth-child(1)) > .ContentCon::before{
+    content: "";
+    height: 5px;
+    background-color: red;
+    transform-origin: 0px 50%;
+    width: 0%;
+    left: -50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition-delay: var(--vel);
+    transition: var(--vel);
+}
+.ScrollableCon > .ItemTLCon.activeItem:not(:nth-child(1)) > .ContentCon::before{
+    width: 100%;
+    transition-delay: var(--vel);
+    transition: var(--vel);
+}
+.ScrollableCon > .ItemTLCon.activeItem > .ContentCon > .circCon{
+    background-color: red;
+}
+.circCon{
+    width: 30%;
+    aspect-ratio: 1/1;
+    background-color: lightgray;
+    border-radius: 50%;
+    z-index: 5;
+    position: absolute;
+    transition-delay: var(--vel);
+    transition: var(--vel);
+}
+.ScrollableCon > .ItemTLCon.activeItem:nth-child(odd) > .ContentCon > .txtCon,
+.ScrollableCon > .ItemTLCon.activeItem:nth-child(even) > .ContentCon > .txtTitle{
+    transform: translateY(110%);
+}
+.ScrollableCon > .ItemTLCon.activeItem:nth-child(even) > .ContentCon > .txtCon,
+.ScrollableCon > .ItemTLCon.activeItem:nth-child(odd) > .ContentCon > .txtTitle{
+    transform: translateY(-110%);
+}
+.ScrollableCon > .ItemTLCon.activeItem> .ContentCon > .txtCon,
+.ScrollableCon > .ItemTLCon.activeItem> .ContentCon > .txtTitle{
+    filter: blur(0px);
+    opacity: 1;
+}
+.txtTitle{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-family: Arial;
+    font-size: 3vw;
+    padding: 10px;
+    opacity: 0;
+    padding: 5px;
+    transition-delay: var(--vel);
+    transition: var(--vel);
+}
+.txtCon{
+    width: 100%;
+    height: 50%;
+    /*border: 2px solid green;*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    transform: translateY(0);
+    filter: blur(3px);
+    opacity: 0;
+    padding: 5px;
+    transition-delay: var(--vel);
+    transition: var(--vel);
+}
+.txtCon > p{
+    text-align: justify;
+    font-size: 1vw;
+}

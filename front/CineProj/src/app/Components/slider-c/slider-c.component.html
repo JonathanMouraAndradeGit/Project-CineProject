@@ -1,0 +1,62 @@
+<nav class="NavCon">
+    <ul>
+        <li><a>Item1</a></li>
+        <li><a>Item2</a></li>
+        <li><a>Item3</a></li>
+    </ul>
+</nav>
+<div class="Con">
+    <div class="mainContent">
+        <img src="">
+        <div class="MainCDisp">
+            <div class="MainCDispContent">
+                <h3>title01</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                    veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                    ea commodo consequat. Duis aute irure.</p>
+            </div>
+        </div>
+    </div>
+    <div class="sideBtnProg">
+        <div class="ButtonBar">
+            <button (click)="setSelect()">&lt;</button>
+            <button (click)="setSelected2()">&gt;</button>
+            <!--button onclick="setContent('l')">&lt;</button>
+                <button onclick="setContent('r')">&gt;</button-->
+        </div>
+        <!--progress [value]="value" max="100"> 32% </progress-->
+        <div class="progressBCon">
+            <div class="progressB" [ngStyle]="{'width':value}"></div>
+        </div>
+    </div>
+    <div class="thumbCon">
+        <div class="Item">
+            <div class="ElementDisplay">
+                <img src="" />
+            </div>
+            <div class="ContentCard">
+                <img src="" />
+                <p>description</p>
+            </div>
+        </div>
+        <div class="Item">
+            <div class="ElementDisplay">
+                <img src="" />
+            </div>
+            <div class="ContentCard">
+                <img src="" />
+                <p>description</p>
+            </div>
+        </div>
+        <div class="Item">
+            <div class="ElementDisplay">
+                <img src="" />
+            </div>
+            <div class="ContentCard">
+                <img src="" />
+                <p>description</p>
+            </div>
+        </div>
+    </div>
+</div>

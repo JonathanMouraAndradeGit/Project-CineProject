@@ -1,0 +1,87 @@
+<div class="ContentInforContainer" [ngStyle]="{'background-color': (mode) ? 'white' : 'rgb(20,20,20)'}">
+    <section class="topContainer">
+        <div class="Item">
+            <div class="Icon">
+                <img src="/static/icon/google-drive-logo.png"
+                [ngStyle]="{'filter': (mode) ? 'invert(0)' : 'invert(1)'}"/>
+            </div>
+            <span [ngStyle]="{'background-color': (mode) ? 'black' : 'white'}"></span>
+            <div class="Content">
+                <h4 [ngStyle]="{'color': (mode) ? 'black' : 'white'}">topic-1</h4>
+                <p class="TopicdDescription"
+                [ngStyle]="{'color': (mode) ? 'black' : 'white'}">1Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua.</p>
+                <span [ngStyle]="{'color': (mode) ? 'black' : 'white'}">text-ref 
+                    <img src="/static/icon/google-drive-logo.png" 
+                    [ngStyle]="{'filter': (mode) ? 'invert(0)' : 'invert(1)'}"/></span>
+            </div>
+        </div>
+        <div class="Item">
+            <div class="Icon">
+                <img src="/static/icon/caution-sign.png" 
+                [ngStyle]="{'filter': (mode) ? 'invert(0)' : 'invert(1)'}"/>
+            </div>
+            <span [ngStyle]="{'background-color': (mode) ? 'black' : 'white'}"></span>
+            <div class="Content">
+                <h4 [ngStyle]="{'color': (mode) ? 'black' : 'white'}">topic-1</h4>
+                <p class="TopicdDescription"
+                [ngStyle]="{'color': (mode) ? 'black' : 'white'}">1Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua.</p>
+                <span [ngStyle]="{'color': (mode) ? 'black' : 'white'}">text-ref 
+                    <img src="/static/icon/google-drive-logo.png" 
+                    [ngStyle]="{'filter': (mode) ? 'invert(0)' : 'invert(1)'}"/></span>
+            </div>
+        </div>
+        <div class="Item">
+            <div class="Icon">
+                <img src="/static/icon/settings.png"
+                [ngStyle]="{'filter': (mode) ? 'invert(0)' : 'invert(1)'}"/>
+            </div>
+            <span [ngStyle]="{'background-color': (mode) ? 'black' : 'white'}"></span>
+            <div class="Content">
+                <h4 [ngStyle]="{'color': (mode) ? 'black' : 'white'}">topic-1</h4>
+                <p class="TopicdDescription"
+                [ngStyle]="{'color': (mode) ? 'black' : 'white'}">1Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua.</p>
+                <span [ngStyle]="{'color': (mode) ? 'black' : 'white'}">text-ref 
+                    <img src="/static/icon/google-drive-logo.png" 
+                    [ngStyle]="{'filter': (mode) ? 'invert(0)' : 'invert(1)'}"/></span>
+            </div>
+        </div>
+    </section>
+    <div class="BottomContainer">
+        <div class="BtnConL">
+            <h3 [ngStyle]="{'color': (mode) ? 'black' : 'white'}">topic-main</h3>
+            <div class="TopicContainer">
+                <div class="sideIcon">
+                    <img src="/static/icon/caution-sign.png"
+                    [ngStyle]="{'filter': (mode) ? 'invert(0)' : 'invert(1)'}"/>
+                </div>
+                <div class="Content">
+                    <h4 [ngStyle]="{'color': (mode) ? 'black' : 'white'}">topic-1</h4>
+                    <p class="TopicdDescription"
+                    [ngStyle]="{'color': (mode) ? 'black' : 'white'}">1Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+            </div>
+            <div class="TopicContainer">
+                <div class="sideIcon">
+                    <img src="/static/icon/caution-sign.png"
+                    [ngStyle]="{'filter': (mode) ? 'invert(0)' : 'invert(1)'}"/>
+                </div>
+                <div class="Content">
+                    <h4 [ngStyle]="{'color': (mode) ? 'black' : 'white'}">topic-1</h4>
+                    <p class="TopicdDescription"
+                    [ngStyle]="{'color': (mode) ? 'black' : 'white'}">1Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+            </div>
+        </div>
+        <div class="BtnConR">
+            <ng-content select=".displayItem">
+
+            </ng-content>
+            <!--img src="/static/img/shark.jpg"-->
+        </div>
+    </div>
+</div>

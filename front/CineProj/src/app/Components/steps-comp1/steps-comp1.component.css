@@ -1,0 +1,97 @@
+:host,.StepComp{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*border: 2px solid purple;*/
+    overflow: hidden;
+    transition: 0.5s;
+}
+/*
+.StepComp.Activate{
+    background-color: purple;
+}*/
+.StepItemCon{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*border: 1px solid red;*/
+    position: relative;
+    flex-direction: column;
+}
+.StepItemCon:not(:nth-of-type(1)):before{
+    content: "";
+    position: absolute;
+    left: -50%;
+    top: 50%;
+    transform-origin: 0px 50%;
+    width: 0%;
+    height: 3%;
+    background-color: black;
+    transform: translateY(-50%);
+    transition: var(--vel);
+    transition-delay: var(--vel);
+}
+.ItemC{
+    position: relative;
+    width: 50%;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: lightgray;
+    border-radius: 50%;
+    z-index: 5;
+}
+.ItemC > img{
+    position: absolute;
+    height: 70%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: center;
+}
+.SelectedValid.StepItemCon:not(:nth-of-type(1)):before{
+    width: 100%;
+    transition: var(--vel);
+    transition-delay: var(--vel);
+    background-color: red !important;
+}
+.SelectedValid.StepItemCon > .ItemC{
+    background-color: red;
+}
+.SelectedValid.StepItemCon > .ContentTxt{
+    transform: translateY(0);
+    filter: blur(0px);
+    opacity: 1;
+}
+.ContentTxt{
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 5px;
+    transition: 0.5s;
+    transform: translateY(100%);
+    filter: blur(5px);
+    opacity: 0;
+}
+.ContentTxt > p:nth-of-type(1){
+    font-size: 2.5vw;
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-family: Arial;
+    transition: 0.5s;
+}
+.ContentTxt > p:nth-of-type(2){
+    font-family: Arial;
+    color: gray;
+    transition: 0.5s;
+
+}

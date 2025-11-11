@@ -1,0 +1,22 @@
+<div class="FT1frmf">
+    <div class="SideM">
+        <p class="frmT">SignUp</p>
+        <div class="SideLvl">
+            <p class="frmT">Login</p>
+            <div class="FieldBtns">
+                <span (click)="changeBar('u')"><img src="/static/icon/login.png"/></span>
+                <span (click)="changeBar('d')"><img src="/static/icon/add-friend.png"/></span>
+            </div>
+        </div>
+    </div>
+    <div class="FormC">
+        <div class="FrmSlideC">
+            <div class="FrmCSl">
+                <ng-content select=".frm1"></ng-content>
+            </div>
+            <div class="FrmCSl">
+                <ng-content select=".frm2" ></ng-content>
+            </div>
+        </div>
+    </div>
+</div>

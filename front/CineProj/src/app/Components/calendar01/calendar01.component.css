@@ -1,0 +1,178 @@
+:host,.mainC {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.CalendarCon {
+    height: 100%;
+    width: 100%;
+    /*box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.DaysCon {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(7, auto);
+    grid-template-rows: auto;
+}
+
+.Item {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1vw;
+    font-weight: bolder;
+    font-family: Arial;
+    transition: 0.5s;
+    background-color: white;
+}
+
+.Item:hover {
+
+    background-color: black;
+    color: white;
+}
+
+.next,
+.prev {
+    color: lightgray;
+}
+
+.weekDaysName {
+    width: 100%;
+    min-height: 7vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ItemWDN {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5vw;
+    font-family: Arial;
+    color: lightgray;
+    text-transform: uppercase;
+    background-color: rgb(30, 30, 30);
+}
+
+.MonthCon {
+    background-color: white;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10vh;
+    position: relative;
+}
+
+.btn {
+    top: 50%;
+    position: absolute;
+    height: 50%;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    color: black;
+    opacity: 0.5;
+    font-size: 2vw;
+    font-family: Arial;
+    font-weight: bolder;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    transition: 0.5s;
+}
+
+.btn:hover {
+    opacity: 1;
+}
+
+.l {
+    left: 0px;
+}
+
+.r {
+    right: 0px;
+}
+
+.MonthCon>p {
+    font-family: Arial;
+    text-transform: uppercase;
+    font-size: 3vw;
+    font-weight: bolder;
+}
+
+.YearCon {
+    width: 100%;
+    height: 18%;
+    /*border: 2px solid green;*/
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 5px;
+}
+
+.YearMC {
+    height: 100%;
+    width: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*border: 2px solid purple;*/
+}
+
+.YbtnCon {
+    height: 100%;
+    aspect-ratio: 0.5/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /*border: 2px solid purple;*/
+}
+
+.YbtnCon>button {
+    height: 100%;
+    aspect-ratio: 1/1;
+    background-color: white;
+    color: black;
+    border-radius: 50%;
+    opacity: 0.5;
+    transition: 0.5s;
+    font-family: Arial;
+    font-weight: bolder;
+    font-size: 1.5vw;
+}
+
+.YbtnCon>button:hover {
+    opacity: 1;
+}
+
+.YearData {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 3vw;
+    font-family: Arial;
+    font-weight: bolder;
+
+}

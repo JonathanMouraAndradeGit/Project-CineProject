@@ -1,0 +1,263 @@
+:host,.DisplayDynamicContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.DisplayDynamicContainer{
+    gap: 5px;
+}
+.LabelContainer{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: red;
+    width: calc( 100vw*(var(--qtd)/50));
+    transition: 0.5s;
+    border-radius: 4vw;
+    position: relative;
+    overflow: hidden;
+}
+.LabelContainer > input{
+    display: none;
+}
+.LabelContainer:has(input:checked){
+    background-color: purple;
+    width: 50%;
+}
+.Content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    flex-direction: column;
+    text-align: justify;
+    gap: 5px;
+    z-index: 12;
+}
+label:has(input:not(:checked)) > .Content  > .Index{
+    width: calc(100vw * (var(--qtd) / 50));
+    aspect-ratio: 1/1;
+    color: white;
+    background-color: black;
+    border-radius: 50%;
+    position: relative;
+    left: 0px;
+}
+label:has(input:checked) > .Content  > .Index{
+    width: calc(100vw * (var(--qtd) / 50));
+    aspect-ratio: 1/1;
+    color: white;
+    background-color: black;
+    border-radius: 50%;
+    position: relative;
+    left: 0px;
+    bottom: 0px;
+}
+.Index > p{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 30px;
+}
+label>*{
+    position: absolute;
+}
+label>img {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+label:has(*+input:checked) > img{
+    filter: brightness(0.3);
+}
+.Content > p{
+    margin-left: calc((100vw * (var(--qtd) / 51)) / 2);
+    position: absolute;
+    text-orientation: upright;
+    writing-mode: vertical-lr;
+    top: 10px;
+    transform: translateX(-50%);
+    font-size: 1.5vw !important;
+}
+ label:has(input:checked) > .Content > .Description{
+   opacity: 1;
+   transform: translateY(0%);
+   transition-delay: 0.5s;
+ }
+ label:has(input:not(:checked)) > .Content > .Description{
+   opacity: 0; 
+   transition-delay: 0s;
+   transform: translateY(100%);
+ }
+
+.Content > .Description{
+    height: calc(100vw * (var(--qtd) / 50));
+    bottom: 0px;
+    position: absolute;
+    /*min-width: calc(100% - (100vw * (var(--qtd) / 50)) );*/
+    min-width: calc(100% - (100vw * (var(--qtd) / 50)) );
+    margin-left: calc(100vw * (var(--qtd) / 50));
+    padding: 5px;
+    color: white;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    font-size: 2vw;
+}
+.Content > .Description > p{
+    min-width: 100%;
+}
+
+.Content>*:nth-child(1) {
+    color: white;
+    font-family: Arial;
+    text-transform: uppercase;
+    font-size: 3vw;
+}
+/*
+.disp {
+    width: 100%;
+    height: 70vh;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    border: 2px solid red;
+}
+
+.disp>label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    border-radius: 70px;
+    overflow: hidden;
+    max-width: calc(100% * (var(--qtd) / 50));
+    transition: 0.5s;
+    position: relative;
+}
+label:has(input:not(:checked)) > .Content  > .Index{
+    width: calc(100vw * (var(--qtd) / 51));
+    aspect-ratio: 1/1;
+    color: white;
+    background-color: black;
+    border-radius: 50%;
+    position: relative;
+    left: 0px;
+}
+label:has(input:checked) > .Content  > .Index{
+    width: calc(100vw * (var(--qtd) / 51));
+    aspect-ratio: 1/1;
+    color: white;
+    background-color: black;
+    border-radius: 50%;
+    position: relative;
+    left: 0px;
+    bottom: 0px;
+}
+.Index > p{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 30px;
+}
+
+
+label>*:not(img) {
+    position: absolute;
+}
+
+.disp>label>input {
+    display: none;
+}
+
+label>img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+}
+
+label:has(input:checked) {
+    max-width: 50%;
+}
+
+.Content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    flex-direction: column;
+    text-align: justify;
+    gap: 5px;
+}
+.Content > p{
+    margin-left: calc((100vw * (var(--qtd) / 51)) / 2);
+    position: absolute;
+    text-orientation: upright;
+    writing-mode: vertical-lr;
+    top: 10px;
+    transform: translateX(-50%);
+}
+ label:has(input:checked) > .Content > .Description{
+   opacity: 1;
+ }
+ label:has(input:not(:checked)) > .Content > .Description{
+   opacity: 0; 
+ }
+
+.Content > .Description{
+    height: calc(100vw * (var(--qtd) / 51));
+    right: 0px;
+    bottom: 0px;
+    position: absolute;
+    width: calc(100% - (100vw * (var(--qtd) / 51)) );
+    padding: 15px;
+    color: white;
+     transition: 0.3s;
+}
+
+.Content>*:nth-child(1) {
+    color: white;
+    font-family: Arial;
+    text-transform: uppercase;
+    font-size: 30px;
+}
+*/
+/*
+.Content>.desc {
+    font-family: Arial;
+    color: white;
+    flex-shrink: 0;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    transition: 0.5s;
+    opacity: 1;
+}
+
+label:has(input:not(:checked))>.Content>.desc {
+    opacity: 0;
+}
+*/

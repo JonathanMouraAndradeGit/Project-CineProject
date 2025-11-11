@@ -1,0 +1,49 @@
+<nav class="NavContainer" [ngStyle]="{'background-color': (mode) ? 'white' : 'black'}">
+    <div class="SpandNavContainer" [ngStyle]="{'background-color': (mode) ? 'white' : 'black'}">
+        <div class="TitleNavCon">
+            <div class="IconImg">
+                <img src="/static/icon/atom.png" 
+                [ngStyle]="{'filter': (mode) ? 'invert(0)' : 'invert(1)'}"/>
+            </div>
+            <div class="TNVContent">
+                <span [ngStyle]="{'color': (mode) ? 'black' : 'white'}">CineProject</span>
+                <span [ngStyle]="{'color': (mode) ? 'black' : 'white'}">navbar-type3</span>
+            </div>
+        </div>
+        <ul class="liSetContainer">
+            <div class="Marker">
+                <div class="MarkerBody" [ngClass]="{'white': (!mode),'black': (mode)}">
+                    <span class="markerHead"></span>
+                    <span class="t"></span>
+                    <span class="b"></span>
+                </div>
+            </div>
+            <li routerLinkActive="SelectedPage" [routerLinkActiveOptions]="{exact: true}"
+            ><div class="IconLi">
+                <img src="/static/icon/home.png"
+                [ngStyle]="{'filter': (mode) ? 'invert(0)' : 'invert(1)'}"/></div>
+                <a routerLink=""
+                [ngStyle]="{'color': (mode) ? 'black' : 'white'}">Home</a></li>
+            <li routerLinkActive="SelectedPage" [routerLinkActiveOptions]="{exact: true}"
+            ><div class="IconLi">
+                <img src="/static/icon/login.png"
+                [ngStyle]="{'filter': (mode) ? 'invert(0)' : 'invert(1)'}"/></div>
+                <a routerLink="page1"
+                [ngStyle]="{'color': (mode) ? 'black' : 'white'}">Login</a></li>
+            <li routerLinkActive="SelectedPage" [routerLinkActiveOptions]="{exact: true}"
+            ><div class="IconLi">
+                <img src="/static/icon/google-drive-logo.png"
+                [ngStyle]="{'filter': (mode) ? 'invert(0)' : 'invert(1)'}"/></div>
+                <a routerLink="page2"
+                [ngStyle]="{'color': (mode) ? 'black' : 'white'}">settings</a></li>
+        </ul>
+        <div class="FooterNav">
+            <div class="TNVContent">
+                <span [ngStyle]="{'color': (mode) ? 'black' : 'white'}">{{ (mode) ? 'Light' : 'Dark' }}</span>
+            </div>
+            <div class="FootCon">
+                <app-switcher></app-switcher>
+            </div>
+        </div>
+    </div>
+</nav>
